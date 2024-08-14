@@ -37,7 +37,7 @@ typedef long long ll;
 // freopen("output.txt", "w", stdout);
 // INT_MAX
 
-int N, R, M, C;
+// https://dmoj.ca/problem/ccc03j1
 
 int main() {
     fast;
