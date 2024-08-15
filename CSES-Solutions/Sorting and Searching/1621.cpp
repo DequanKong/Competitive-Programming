@@ -25,25 +25,32 @@
 #include <bitset>
 #include <complex>
 #include <random>
- 
+
 using namespace std;
 typedef long long ll;
 #define endl "\n";
 #define loop(i,a,b) for (int i = a; i < b; ++i)
+#define fast ios::sync_with_stdio(0); cin.tie(0);
+
 // getline(cin, s);
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
- 
- 
+// INT_MAX
+
+// Problem URL: https://cses.fi/problemset/task/1621
+
 int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+    fast;
     
-    ll N; cin >> N;
-    cout << N << " ";
-    while (N != 1) {
-        if (N % 2 ==0) N/=2;
-        else N=N*3+1;
-        cout << N << " ";
+    int N; cin >> N; vector<ll> a(N);
+    loop(i,0,N) cin >> a[i];
+    sort(a.begin(), a.end());
+    int j = 1;
+    for (int i = 1; i < N; ++i) {
+        if (a[i] != a[i-1]) {
+            j++;
+        }
     }
+    cout << j << endl;
+    
 }
