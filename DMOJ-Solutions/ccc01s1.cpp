@@ -39,7 +39,8 @@ typedef long long ll;
 // INT_MAX
 
 // Problem URL: https://dmoj.ca/problem/ccc01s1
-// Comment: I know, this is not a beautiful solution. But it's likely something I'd write on a contest (my brain would be too lazy to craft a function for this problem)
+// Comment: I know, this is not a beautiful solution. But it's likely something I'd write on a contest 
+// (my brain would be too lazy to craft a function for this problem)
 const int MM = 1e9+7;
 const int INF = 0x3f3f3f3f;
 
