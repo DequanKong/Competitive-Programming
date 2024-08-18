@@ -2,6 +2,7 @@
 
 using namespace std;
 typedef long long ll;
+// Problem URL: https://dmoj.ca/problem/coci17c1p3hard
 int Q, op; string s; unordered_map <string, int> mp;
 int main() {
     for (cin >> Q; Q--;) {

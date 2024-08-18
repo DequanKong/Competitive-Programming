@@ -28,22 +28,24 @@
 
 using namespace std;
 typedef long long ll;
-/*
- short int and int: -32,767 to 32,767
- long int: -2,147,483,647 to 2,147,483,647
- long long int: -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807
- */
+// Problem URL: https://dmoj.ca/problem/hkccc08j3
 int main() {
-    int N; cin >> N;
-    vector <ll> all; ll j;
+    map <ll, string> mp;
+    map <ll, int> mp2;
+    int N; cin >> N; string s; ll p;
+    for (int i = 0; i < N; i ++) {
+        cin >> s >> p; mp[p] = s;
+    }
+    int D; cin >> D;
     for (int i = 0; i < N; i++) {
-        cin >> j; all.push_back(j);
+        cin >> p; mp2[p]++;
     }
-    sort(all.begin(), all.end());
-//    for (int i = 0; i < N; i++) cout << all[i] << "\n";
-    for (int i = 0; i < N/2; i++) {
-        cout << all[(N+1)/2-1-i] << " " << all[(N+1)/2+i] << " ";
-        //low.push_back(all[N-1-i]); high.push_back(all[N+i]);
+    ll pnumber; int maxCount = 0;
+    for (auto pair: mp2) {
+        if (pair.second > maxCount) {
+            maxCount = pair.second;
+            pnumber = pair.first;
+        }
     }
-    if (N%2==1) cout << all[0];
+    cout << mp.find(pnumber)-> second;
 }

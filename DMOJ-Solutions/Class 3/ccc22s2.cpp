@@ -5,6 +5,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pi;
  
+// Problem URL: https://dmoj.ca/problem/ccc22s2
 int main() {
     cin.sync_with_stdio(0);
     cin.tie(0);

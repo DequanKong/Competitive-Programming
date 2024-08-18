@@ -28,11 +28,7 @@
 
 using namespace std;
 typedef long long ll;
-/*
- short int and int: -32,767 to 32,767
- long int: -2,147,483,647 to 2,147,483,647
- long long int: -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807
- */
+// Problem URL: https://dmoj.ca/problem/tle16c6s1
 
 int main() {
     int T;

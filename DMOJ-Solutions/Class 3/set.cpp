@@ -28,21 +28,15 @@
 
 using namespace std;
 typedef long long ll;
-/*
- short int and int: -32,767 to 32,767
- long int: -2,147,483,647 to 2,147,483,647
- long long int: -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807
- */
+
+// Problem URL: https://dmoj.ca/problem/set
 int main() {
-    for(int i = 0; i < 5; i++) {
-        int R, C, Ro; cin >> R >> C >> Ro;
-        unordered_set <int> x, y;
-        for (int i = 0, xi, yi; i < Ro; i++) {
-            cin >> xi >> yi;
-            x.insert(xi); y.insert(yi);
-        }
-        
-        cout << (R-x.size())*(C-y.size()) << "\n";
+    int N;
+    unordered_set<int> s;
+    cin >> N;
+    for (int i = 0, j; i < N; i++) {
+        cin >> j;
+        s.insert(j);
     }
-    
+    cout << s.size();
 }
