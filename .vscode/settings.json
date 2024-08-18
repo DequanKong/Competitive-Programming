@@ -4,6 +4,7 @@
         "unordered_set": "cpp",
         "vector": "cpp",
         "random": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "iostream": "cpp"
     }
 }
