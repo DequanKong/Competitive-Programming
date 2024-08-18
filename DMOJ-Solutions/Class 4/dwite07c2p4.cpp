@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// Problem URL: https://dmoj.ca/problem/dwite07c2p4
 int main() {
     for (int i = 0; i < 5; i++) {
         string s;
