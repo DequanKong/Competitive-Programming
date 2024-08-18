@@ -35,22 +35,23 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 // INT_MAX
-map<int,vector<ll>> mp;
 
-ll N, ans = 0;
-
+// Problem URL: https://dmoj.ca/problem/bts18p2
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    cin >> N;
-    vector<ll> p(N+1), t(N+1), d(N+2);
-    loop(i,1,N+1) cin >> p[i];
-    loop(i,1,N+1) {
-        cin >> t[i]; d[i] = p[i]-t[i];
+    string S;
+    getline(cin, S);
+    unordered_map<char, vector<ll>> mp;
+    for (int i = 0; i < S.size(); ++i) {
+        mp[S[i]].push_back(i+1);
     }
-    loop(i,0,N+1) {
-        ans+=abs(d[i+1]-d[i]);
+    ll Q; cin >> Q;
+    loop(i,0,Q) {
+        ll L, R; char c; cin >> L >> R >> c;
+        cout << upper_bound(mp[c].begin(),mp[c].end(),R) - lower_bound(mp[c].begin(),mp[c].end(),L) << endl;
     }
-    cout << ans/2 << endl;
+    //this is a very interesting sentence and you will agree
+    
 }

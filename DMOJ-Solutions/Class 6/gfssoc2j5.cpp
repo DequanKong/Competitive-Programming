@@ -36,19 +36,26 @@ typedef long long ll;
 // freopen("output.txt", "w", stdout);
 // INT_MAX
 
+// Problem URL: https://dmoj.ca/problem/gfssoc2j5
+map<int,vector<ll>> mp;
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    ll N; cin >> N; vector<ll> a(N), b(N);
-    loop(i,0,N) cin >> a[i];
-    loop(i,0,N) cin >> b[i];
-    ll as = 0, bs = 0; ll out = 0;
+    ll N, Q, a, b, mx = 0, out = 0; int R;
+    cin >> N >> Q;
     loop(i,0,N) {
-        as+= a[i]; bs += b[i];
-        if (as==bs) out = i+1;
+        cin >> R; mp[R].push_back(i+1);
     }
-    cout << out << endl;
-   
+    loop(i,0,Q) {
+        cin >> a >> b;
+        for (int j = 10; j >= 1; --j) {
+            out = upper_bound(mp[j].begin(),mp[j].end(),a-1) - lower_bound(mp[j].begin(),mp[j].end(),1)
+            + upper_bound(mp[j].begin(),mp[j].end(),N) - lower_bound(mp[j].begin(),mp[j].end(),b+1);
+            if (out != 0) {
+                cout << j << " " << out << endl; break;
+            }
+        }
+    }
 }

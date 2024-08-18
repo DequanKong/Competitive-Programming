@@ -36,22 +36,21 @@ typedef long long ll;
 // freopen("output.txt", "w", stdout);
 // INT_MAX
 
-
+// Problem URL: https://dmoj.ca/problem/seed3
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    ll N; cin >> N; vector<ll> t(N);
-    loop(i,0,N) cin >> t[i];
-    ll Q; cin >> Q;
-    vector<ll> psa(N+1); psa[0] = 0;
-    loop(i,1,N+1) {
-        psa[i] = psa[i-1]+t[i-1];
+    int I, J; ll N; cin >> I >> N >> J;
+    vector<ll> s(I); vector<ll> dfa(I);
+    loop(i,0,J) {
+        int L, R, val; cin >> L >> R >> val;
+        dfa[L-1] += val; dfa[R] -= val;
     }
-    loop(i,0,Q) {
-        ll L, R; cin >> L >> R;
-        cout << psa[R+1]-psa[L] << endl;
+    vector<ll> s2(I+1); s2[0] = 0; ll out = 0;
+    loop(i,1,I+1) {
+        s2[i] = s2[i-1]+dfa[i-1];
+        if (s2[i] < N ) out++;
     }
-    
-   
+    cout << out << endl;
 }

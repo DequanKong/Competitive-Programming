@@ -36,21 +36,22 @@ typedef long long ll;
 // freopen("output.txt", "w", stdout);
 // INT_MAX
 
+// Problem URL: https://dmoj.ca/problem/dmopc14c2p4
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    string S;
-    getline(cin, S);
-    unordered_map<char, vector<ll>> mp;
-    for (int i = 0; i < S.size(); ++i) {
-        mp[S[i]].push_back(i+1);
-    }
+    ll N; cin >> N; vector<ll> t(N);
+    loop(i,0,N) cin >> t[i];
     ll Q; cin >> Q;
-    loop(i,0,Q) {
-        ll L, R; char c; cin >> L >> R >> c;
-        cout << upper_bound(mp[c].begin(),mp[c].end(),R) - lower_bound(mp[c].begin(),mp[c].end(),L) << endl;
+    vector<ll> psa(N+1); psa[0] = 0;
+    loop(i,1,N+1) {
+        psa[i] = psa[i-1]+t[i-1];
     }
-    //this is a very interesting sentence and you will agree
+    loop(i,0,Q) {
+        ll L, R; cin >> L >> R;
+        cout << psa[R+1]-psa[L] << endl;
+    }
     
+   
 }

@@ -36,21 +36,25 @@ typedef long long ll;
 // freopen("output.txt", "w", stdout);
 // INT_MAX
 
-
+// Problem URL: https://dmoj.ca/problem/usaco24janb3
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int I, J; ll N; cin >> I >> N >> J;
-    vector<ll> s(I); vector<ll> dfa(I);
-    loop(i,0,J) {
-        int L, R, val; cin >> L >> R >> val;
-        dfa[L-1] += val; dfa[R] -= val;
-    }
-    vector<ll> s2(I+1); s2[0] = 0; ll out = 0;
-    loop(i,1,I+1) {
-        s2[i] = s2[i-1]+dfa[i-1];
-        if (s2[i] < N ) out++;
+    // if L = 4, patch N gets 4, N-1 gets 3, ..., N-3 get 1, N-4 to 1 get nothing
+    // Goal: Get everything to 0
+    // Idea - -1,-2,-3,...-N OR 1,2,3,...,N
+    int N; cin >> N; vector<ll> p(N), diff1(N), diff2(N); ll out = 0;
+    loop(i,0,N) {
+        cin >> p[i];
+        if (i != 0) {
+            diff1[i]=p[i]-p[i-1];
+            diff2[i] = diff1[i]-diff1[i-1]; out += abs(diff2[i]);
+        }
+        else {
+            diff1[i] = p[i]; diff2[i] = diff1[i]; out+= abs(diff2[i]);
+        }
     }
     cout << out << endl;
+    
 }

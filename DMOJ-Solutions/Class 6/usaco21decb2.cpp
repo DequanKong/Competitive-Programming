@@ -35,25 +35,24 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 // INT_MAX
+
+// Problem URL: https://dmoj.ca/problem/usaco21decb2
 map<int,vector<ll>> mp;
+
+ll N, ans = 0;
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    ll N, Q, a, b, mx = 0, out = 0; int R;
-    cin >> N >> Q;
-    loop(i,0,N) {
-        cin >> R; mp[R].push_back(i+1);
+    cin >> N;
+    vector<ll> p(N+1), t(N+1), d(N+2);
+    loop(i,1,N+1) cin >> p[i];
+    loop(i,1,N+1) {
+        cin >> t[i]; d[i] = p[i]-t[i];
     }
-    loop(i,0,Q) {
-        cin >> a >> b;
-        for (int j = 10; j >= 1; --j) {
-            out = upper_bound(mp[j].begin(),mp[j].end(),a-1) - lower_bound(mp[j].begin(),mp[j].end(),1)
-            + upper_bound(mp[j].begin(),mp[j].end(),N) - lower_bound(mp[j].begin(),mp[j].end(),b+1);
-            if (out != 0) {
-                cout << j << " " << out << endl; break;
-            }
-        }
+    loop(i,0,N+1) {
+        ans+=abs(d[i+1]-d[i]);
     }
+    cout << ans/2 << endl;
 }

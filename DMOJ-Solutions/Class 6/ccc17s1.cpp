@@ -36,24 +36,19 @@ typedef long long ll;
 // freopen("output.txt", "w", stdout);
 // INT_MAX
 
+// Problem URL: https://dmoj.ca/problem/ccc17s1
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    // if L = 4, patch N gets 4, N-1 gets 3, ..., N-3 get 1, N-4 to 1 get nothing
-    // Goal: Get everything to 0
-    // Idea - -1,-2,-3,...-N OR 1,2,3,...,N
-    int N; cin >> N; vector<ll> p(N), diff1(N), diff2(N); ll out = 0;
+    ll N; cin >> N; vector<ll> a(N), b(N);
+    loop(i,0,N) cin >> a[i];
+    loop(i,0,N) cin >> b[i];
+    ll as = 0, bs = 0; ll out = 0;
     loop(i,0,N) {
-        cin >> p[i];
-        if (i != 0) {
-            diff1[i]=p[i]-p[i-1];
-            diff2[i] = diff1[i]-diff1[i-1]; out += abs(diff2[i]);
-        }
-        else {
-            diff1[i] = p[i]; diff2[i] = diff1[i]; out+= abs(diff2[i]);
-        }
+        as+= a[i]; bs += b[i];
+        if (as==bs) out = i+1;
     }
     cout << out << endl;
-    
+   
 }
