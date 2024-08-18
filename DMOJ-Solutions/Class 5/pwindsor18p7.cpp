@@ -33,6 +33,8 @@ typedef long long ll;
 // getline(cin, s);
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
+
+// Problem URL: https://dmoj.ca/problem/pwindsor18p7
 bool cmp (string x, string y) {
     ll x1 = stoll(x+y); ll x2 = stoll(y+x);
     return x1>x2;

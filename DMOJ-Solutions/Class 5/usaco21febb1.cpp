@@ -34,6 +34,7 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/usaco21febb1
 int main() {
     int N; cin >> N; vector<string> zod = {"Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig", "Rat"};
     map<string, pair<string, int>> mp; mp["Bessie"] = {"Ox", 0};

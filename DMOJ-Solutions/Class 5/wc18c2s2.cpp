@@ -34,6 +34,7 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/wc18c2s2
 int main() {
     ll N; cin >> N; ll min = 0, max = 0; ll o = 1; ll oi = 0; ll counter = 0;
     loop (i, 0, N) {

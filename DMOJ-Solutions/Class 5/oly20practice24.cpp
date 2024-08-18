@@ -34,7 +34,7 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
-
+// Problem URL: https://dmoj.ca/problem/oly20practice24
 int main() {
     ll T, N; cin >> T >> N; vector<int>a(N);
     loop (i, 0, N) {

@@ -34,6 +34,7 @@ typedef long double ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/ccc07s2
 int main() {
     int n; cin >> n; vector<array<int, 3>> box (n);
     loop(i, 0, n) {

@@ -34,6 +34,7 @@ typedef long double ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/ccc20s1
 bool cmp(pair<int, string> x, pair <int, string> y){
     return x.first > y.first && x.second > y.second;
 }

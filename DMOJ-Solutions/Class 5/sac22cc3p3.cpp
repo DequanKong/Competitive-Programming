@@ -34,6 +34,7 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/sac22cc3p3
 int main() {
     ll N; cin >> N; vector<pair<ll,ll>> a(N);
     ll mx = 0;

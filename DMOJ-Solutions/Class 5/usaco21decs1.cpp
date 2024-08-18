@@ -35,6 +35,7 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/usaco21decs1
 int main() {
     int K, M, N;
     cin >> K >> M >> N;
