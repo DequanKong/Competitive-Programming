@@ -13,7 +13,7 @@
 #include <cctype>
 using namespace std;
 typedef long long ll;
-
+// Problem URL: https://dmoj.ca/problem/ccc00s2
 int main() {
     cin.sync_with_stdio(0);
     cin.tie(0);

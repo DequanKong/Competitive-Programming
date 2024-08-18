@@ -2,6 +2,7 @@
 
 using namespace std;
 typedef long long ll;
+// Problem URL: https://dmoj.ca/problem/dmopc19c5p1
 int main() {
     list <string> items;
     int N, M, Ti; string si, ri; int output = 0;

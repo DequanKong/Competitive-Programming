@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+// Problem URL: https://dmoj.ca/problem/dmopc21c7p2
 const int MM = 1e6+5;
 int N, Q, pre[MM], nxt[MM];
 int main() {

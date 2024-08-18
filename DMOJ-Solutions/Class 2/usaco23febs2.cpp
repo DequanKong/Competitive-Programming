@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Problem URL: https://dmoj.ca/problem/usaco23febs2
 typedef long long ll;
 int G, N, ans; vector<array<int, 3>> g;
 int main(){

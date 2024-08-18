@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-// Problem URL: 
+// Problem URL: https://dmoj.ca/problem/ccc08j2
 using namespace std;
 typedef long long ll;
 int main() {

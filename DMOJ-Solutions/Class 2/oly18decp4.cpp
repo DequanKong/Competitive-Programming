@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Problem URL: https://dmoj.ca/problem/oly18decp4
 const int MM = 1e5+3;
 typedef long long ll;
 int N, M, a[MM]; ll ans;
