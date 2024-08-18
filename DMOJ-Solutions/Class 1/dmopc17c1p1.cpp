@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+// Problem URL: https://dmoj.ca/problem/dmopc17c1p1
+
 int rows, cols, query;
 int thisCol, thisRow;
 string input;

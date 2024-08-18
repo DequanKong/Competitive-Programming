@@ -26,10 +26,10 @@
 #include <complex>
 #include <random>
 
-
-
 using namespace std;
 typedef long long ll;
+
+// Problem URL: https://dmoj.ca/problem/usaco22decb1
 int main() {
     ll N; cin >> N;
     vector <ll> a; ll x;

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+// Problem URL: https://dmoj.ca/problem/seed2
 int main() {
     long long max = 2*pow(10,9), min = 1;
     long long m = floor(min+max)/2;

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
+// Problem URL: https://dmoj.ca/problem/ccc24s1
 int main() {
     int N, output = 0;
     cin >> N;

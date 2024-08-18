@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+// Problem URL: https://dmoj.ca/problem/tss17b
 const int MAXN = 1e6;
 typedef long long ll;
 int main() {
