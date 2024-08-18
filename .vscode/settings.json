@@ -3,6 +3,7 @@
         "ios": "cpp",
         "unordered_set": "cpp",
         "vector": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "string": "cpp"
     }
 }
