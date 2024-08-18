@@ -30,23 +30,19 @@ using namespace std;
 typedef long long ll;
 #define endl "\n";
 #define loop(i,a,b) for (int i = a; i < b; ++i)
-#define INF 999999999999999999
-#define MOD 1000000007
-
 // getline(cin, s);
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/a4b1
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int N; cin >> N; vector<int> a(N),dp(N); dp[0] = 0;
-    loop(i,0,N) cin >> a[i];
-    dp[1] = abs(a[1]-a[0]);
-    
-    loop(i,2,N) {
-        dp[i] = min(dp[i-2]+abs(a[i]-a[i-2]), dp[i-1]+abs(a[i]-a[i-1]));
+    int N; cin >> N; vector<int>a(N);
+    loop(i,0,N) {
+        cin >> a[i];
     }
-    cout << dp[N-1] << endl;
+    sort(a.begin(),a.end());
+    loop(i,0,N) cout << a[i] << endl;
 }

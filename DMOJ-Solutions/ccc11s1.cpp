@@ -2,6 +2,8 @@
 
 using namespace std;
 typedef long long ll;
+
+// Problem URL: https://dmoj.ca/problem/ccc11s1
 int main() {
     int N; cin >> N; int tc = 0, sc = 0;
     for (int i = 0; i < N; ++i) {

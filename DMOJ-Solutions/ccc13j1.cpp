@@ -34,14 +34,11 @@ typedef long long ll;
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 
+// Problem URL: https://dmoj.ca/problem/ccc13j1
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int N; cin >> N; vector<int>a(N);
-    loop(i,0,N) {
-        cin >> a[i];
-    }
-    sort(a.begin(),a.end());
-    loop(i,0,N) cout << a[i] << endl;
+    int Y, M; cin >> Y >> M;
+    cout << M+M-Y << endl;
 }

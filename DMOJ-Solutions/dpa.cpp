@@ -30,40 +30,24 @@ using namespace std;
 typedef long long ll;
 #define endl "\n";
 #define loop(i,a,b) for (int i = a; i < b; ++i)
+#define INF 999999999999999999
+#define MOD 1000000007
 
 // getline(cin, s);
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
-// INT_MAX
 
-
+// Problem URL: https://dmoj.ca/problem/dpa
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int N, W;
-    cin >> N >> W;
-    vector<ll> wt;
-    vector<ll> val;
-    for (int i = 0; i < N; i++) {
-        ll t1, t2;
-        cin >> t1 >> t2;
-        wt.push_back(t1);
-        val.push_back(t2);
-    }
-    ll i, j;
- 
-    vector<vector<ll>> DP(N + 1, vector<ll>(W + 1, 0));
+    int N; cin >> N; vector<int> a(N),dp(N); dp[0] = 0;
+    loop(i,0,N) cin >> a[i];
+    dp[1] = abs(a[1]-a[0]);
     
-    for (i = 1; i < N+1; i++)
-    {
-        for (j = 1; j<W +1; j++)
-        {
-            if (wt[i - 1] <= j)
-                DP[i][j] = max(val[i - 1] +DP[i - 1][j - wt[i - 1]],DP[i - 1][j]);
-            else
-                DP[i][j] = DP[i - 1][j];
-        }
+    loop(i,2,N) {
+        dp[i] = min(dp[i-2]+abs(a[i]-a[i-2]), dp[i-1]+abs(a[i]-a[i-1]));
     }
-    cout << DP[N][W] << endl;
+    cout << dp[N-1] << endl;
 }

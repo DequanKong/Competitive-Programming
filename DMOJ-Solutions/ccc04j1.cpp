@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Problem URL: https://dmoj.ca/problem/ccc04j1
 int main() {
     int t, x; cin >> t;
     for (int i = 1; i*i <= t; ++i) {

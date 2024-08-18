@@ -36,19 +36,34 @@ typedef long long ll;
 // freopen("output.txt", "w", stdout);
 // INT_MAX
 
+// Problem URL: https://dmoj.ca/problem/dpd
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int N; cin >> N; int dp[N][3];
-    for (int i = 0; i < N; ++i) {
-        if (i == 0) cin >> dp[0][0] >> dp[0][1] >> dp[0][2];
-        else {
-            cin >> dp[i][0] >> dp[i][1] >> dp[i][2];
-            dp[i][0] += max(dp[i-1][1],dp[i-1][2]);
-            dp[i][1] += max(dp[i-1][0],dp[i-1][2]);
-            dp[i][2] += max(dp[i-1][0],dp[i-1][1]);
+    int N, W;
+    cin >> N >> W;
+    vector<ll> wt;
+    vector<ll> val;
+    for (int i = 0; i < N; i++) {
+        ll t1, t2;
+        cin >> t1 >> t2;
+        wt.push_back(t1);
+        val.push_back(t2);
+    }
+    ll i, j;
+ 
+    vector<vector<ll>> DP(N + 1, vector<ll>(W + 1, 0));
+    
+    for (i = 1; i < N+1; i++)
+    {
+        for (j = 1; j<W +1; j++)
+        {
+            if (wt[i - 1] <= j)
+                DP[i][j] = max(val[i - 1] +DP[i - 1][j - wt[i - 1]],DP[i - 1][j]);
+            else
+                DP[i][j] = DP[i - 1][j];
         }
     }
-    cout << max(max(dp[N-1][0],dp[N-1][1]),dp[N-1][2]) << endl;
+    cout << DP[N][W] << endl;
 }

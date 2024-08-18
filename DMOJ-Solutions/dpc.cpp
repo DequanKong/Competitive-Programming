@@ -34,27 +34,23 @@ typedef long long ll;
 // getline(cin, s);
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
+// INT_MAX
+
+// Problem URL: https://dmoj.ca/problem/dpc
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int N, K; cin >> N >> K; vector<int> a(N),dp(N,0); dp[0] = 0;
-    loop(i,0,N) cin >> a[i];
-    dp[1] = abs(a[1]-a[0]);
-    
-    if (K == 1) {
-        int out = 0;
-        for (int i = 0; i < N-1; i++) {
-            out += abs(a[i+1] - a[i]);
-        }
-        cout << out << endl; return 0;
-    }
-    loop(i,2,N) {
-        dp[i] = INT_MAX;
-        for (int j = 1; j < K && i-j-1 >= 0; ++j) {
-            dp[i] = min(dp[i],min(dp[i-j-1]+abs(a[i]-a[i-j-1]), dp[i-j]+abs(a[i]-a[i-j])));
+    int N; cin >> N; int dp[N][3];
+    for (int i = 0; i < N; ++i) {
+        if (i == 0) cin >> dp[0][0] >> dp[0][1] >> dp[0][2];
+        else {
+            cin >> dp[i][0] >> dp[i][1] >> dp[i][2];
+            dp[i][0] += max(dp[i-1][1],dp[i-1][2]);
+            dp[i][1] += max(dp[i-1][0],dp[i-1][2]);
+            dp[i][2] += max(dp[i-1][0],dp[i-1][1]);
         }
     }
-    cout << dp[N-1] << endl;
+    cout << max(max(dp[N-1][0],dp[N-1][1]),dp[N-1][2]) << endl;
 }
