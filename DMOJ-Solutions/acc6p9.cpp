@@ -1,0 +1,1 @@
+// This is another not serious problem. THe judge accept any sort of submission.
