@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <regex>
@@ -25,28 +25,35 @@
 #include <bitset>
 #include <complex>
 #include <random>
+#include <iterator>
 
 using namespace std;
 typedef long long ll;
-#define endl "\n";
+#define endl '\n';
 #define loop(i,a,b) for (int i = a; i < b; ++i)
-#define fast ios::sync_with_stdio(0); cin.tie(0);
+#define boost() ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define exit return 0;
+
 // getline(cin, s);
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
 // INT_MAX
+// A to Z: 65 to 90 | a to z: 97 to 122
 
-// https://dmoj.ca/problem/a3
+// Problem URL: https://dmoj.ca/problem/bpc1j3
+
+const int MOD = 1e9+7;
+const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const int MM = 1e6+5;
 
 int main() {
-    fast;
-    
-    int t; cin >> t;
-    while (t--) {
-        ll k; cin >> k; k++;
-        while (k*k*k % 1000 != 888) {
-            k++;
-        }
-        cout << k << endl;
+    boost();
+    int N; cin >> N; vector<ll> v(2*N);
+    loop(i,0,2*N) cin >> v[i];
+    sort(v.begin(),v.end()); ll sum = 0;
+    for (int i = 0; i < 2*N; i+=2) {
+        sum += v[i+1] - v[i];
     }
+    cout << sum << endl;
 }
