@@ -1,6 +1,7 @@
-# My (pathetic) attempt at fetching all problems with hidden anime-png on DMOJ
+# My unnecessary attempt at fetching all problems with hidden anime-png on DMOJ
 # Note that DMOJ has a limit of 90 requests per minute
-# Just use this URL instead: https://dmoj.ca/problems/?search="anime-img"&full_text=1
+# This is "useless" because you can simply use this URL instead: https://dmoj.ca/problems/?search="anime-img"&full_text=1
+# Note that you might need to install pip and import requests & bs4.
 
 import requests
 from bs4 import BeautifulSoup
@@ -28,7 +29,7 @@ def fetch_problem_ids_from_page(page_number):
 
 all_problem_ids = set()
 
-for page_number in range(61, 62):  # Change page number here
+for page_number in range(60,61):  # Change page number here
     problem_ids = fetch_problem_ids_from_page(page_number)
     all_problem_ids.update(problem_ids)
 
