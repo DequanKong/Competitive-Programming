@@ -1,5 +1,5 @@
 # Competitive-Programming
-- Last updated 2024-11-26.
+- Last updated 2024-12-07.
 - This repository contains all of my solutions for coding problems from various platforms: AtCoder, DMOJ, CSES, and more to come!
 # Profiles
 Feel free to check out my profile across various platforms:
