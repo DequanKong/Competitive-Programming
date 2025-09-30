@@ -1,4 +1,30 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <regex>
+#include <sstream>
+#include <algorithm>
+#include <cmath>
+#include <unordered_set>
+#include <list>
+#include <stdio.h>
+#include <ctype.h>
+#include <cstring>
+#include <cctype>
+#include <iomanip>
+#include <climits>
+#include <functional>
+#include <cstdlib>
+#include <ctime>
+#include <cstdio>
+#include <stack>
+#include <queue>
+#include <deque>
+#include <map>
+#include <set>
+#include <bitset>
+#include <complex>
+#include <random>
 using namespace std;
 typedef long long ll;
 int n, k, arr[200005], ans; ll x;
